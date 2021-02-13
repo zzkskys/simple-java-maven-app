@@ -11,12 +11,10 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
-   }
-   stages {
-           stage('Build Dockerfile') {
-               steps {
-                   sh 'docker build -t spring-demo .'
-               }
+         stage('Build Dockerfile') {
+           steps {
+               sh 'docker build -t spring-demo .'
            }
-      }
+       }
+   }
 }
