@@ -11,10 +11,15 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
-         stage('Generate Docker Image'){
+        stage('Run'){
             steps{
-                sh 'docker build -t spring-demo .'
+                sh 'java -jar ./target/demo-0.0.1-SNAPSHOT.jar'
             }
-         }
+        }
+//          stage('Generate Docker Image'){
+//             steps{
+//                 sh 'docker build -t spring-demo .'
+//             }
+//          }
     }
 }
