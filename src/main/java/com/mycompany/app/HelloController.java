@@ -10,6 +10,6 @@ public class HelloController {
 
     @GetMapping
     public String hello() {
-        return "Hello World!";
+        return "使用 Docker + Jenkins 自动化部署!";
     }
 }
