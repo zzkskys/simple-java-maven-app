@@ -14,7 +14,9 @@ pipeline {
         }
 
         stage('Docker-Build'){
-            agent any
+            agent {
+                dockerfile true
+            }
             steps{
                 sh 'docker build -t spring-demo .'
             }
