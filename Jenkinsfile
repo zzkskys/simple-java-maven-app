@@ -10,7 +10,8 @@ pipeline {
             }
             steps{
                 sh 'mvn -B -DskipTests clean package'
-                docker.build("spring-demo").push()
+                sh 'mvn dockerfile:build'
+//                 docker.build("spring-demo").push()
             }
         }
 
