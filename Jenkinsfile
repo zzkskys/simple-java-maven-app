@@ -10,17 +10,15 @@ pipeline {
             }
             steps{
                 sh 'mvn -B -DskipTests clean package'
-                sh 'docker build -t spring-demo .'
             }
         }
 
-//         stage('Docker-Build'){
-//             agent any
-//             steps{
-//
-//
-//             }
-//         }
+        stage('Docker-Build'){
+            agent any
+            steps{
+                sh 'docker build -t spring-demo .'
+            }
+        }
 //         stage('Docker-Run'){
 //             agent any
 //             steps{
