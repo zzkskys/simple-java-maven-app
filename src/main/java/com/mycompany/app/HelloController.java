@@ -14,7 +14,8 @@ public class HelloController {
 
     @GetMapping
     public String hello() {
-        return "Hello " + helloProperties.getName() + " !";
+        return "你好 " + helloProperties.getName() + " !";
     }
+
 
 }
