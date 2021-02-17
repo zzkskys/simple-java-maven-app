@@ -14,7 +14,7 @@ public class HelloController {
 
     @GetMapping
     public String hello() {
-        return "你好 " + helloProperties.getName() + ",这是开发分支!";
+        return "你好 " + helloProperties.getName() + ",这是开发分支!!";
     }
 
 
