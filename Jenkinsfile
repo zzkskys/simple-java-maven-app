@@ -16,8 +16,14 @@ pipeline {
             agent any
             steps{
                 sh 'docker build -t spring-demo .'
+
+            }
+        }
+        stage('Docker-Run'){
+            agent any
+            steps{
                 sh 'docker rm -f spring-demo'
-                sh 'docker run --name spring-demo -d -p 8081:8081 spring-demo'
+                sh 'docker run --name spring-demo -d -p 8081:8081 -v /root/spring-demo/config:/spring-demo/config -v /root/spring-demo/data:/spring-demo/data spring-demo'
             }
         }
     }

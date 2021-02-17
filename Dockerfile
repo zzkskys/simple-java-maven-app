@@ -1,7 +1,7 @@
 FROM openjdk:8-jdk-alpine
-ARG JAR_FILE=target/*.jar
 WORKDIR /spring-demo
+ARG JAR_FILE=target/*.jar
 COPY ${JAR_FILE} spring-demo.jar
-VOLUME /spring-demo
 EXPOSE 8081
-ENTRYPOINT ["java","-jar","spring-demo.jar"]
+VOLUME /spring-demo
+ENTRYPOINT ["java","-jar","./spring-demo.jar"]

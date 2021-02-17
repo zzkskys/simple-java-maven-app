@@ -1,3 +1,8 @@
 server:
   port: 8081
 
+
+spring:
+  profiles:
+    # 查找 ./config/ 目录下是否存在 application.yml 若存在则使用该 application.yml
+    include: application.yml
