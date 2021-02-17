@@ -13,13 +13,13 @@ pipeline {
             }
         }
 
-//         stage('Docker-Build'){
-//             agent any
-//             steps{
-//                 sh 'docker build -t spring-demo .'
-//
-//             }
-//         }
+        stage('Docker-Build'){
+            agent none
+            steps{
+                sh 'docker build -t spring-demo .'
+
+            }
+        }
 //         stage('Docker-Run'){
 //             agent any
 //             steps{
