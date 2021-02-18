@@ -1,6 +1,25 @@
+properties([pipelineTriggers([githubPush()])])
+
 pipeline {
-    agent none
+     agent {
+            label 'github-ci'
+     }
+
     stages{
+     /* checkout repo */
+        stage('Checkout SCM') {
+            steps {
+                checkout([
+                 $class: 'GitSCM',
+                 branches: [[name: 'master']],
+                 userRemoteConfigs: [[
+                    url: 'https://github.com/zzkskys/simple-java-maven-app.git',
+                    credentialsId: 'github-personal-access-token',
+                 ]]
+                ])
+            }
+        }
+
         stage('Build'){
             agent{
                 docker{
