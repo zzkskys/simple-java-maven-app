@@ -1,24 +1,22 @@
-properties([pipelineTriggers([githubPush()])])
+// properties([pipelineTriggers([githubPush()])])
 
 pipeline {
-     agent {
-            label 'github-ci'
-     }
+     agent any
 
     stages{
-     /* checkout repo */
-        stage('Checkout SCM') {
-            steps {
-                checkout([
-                 $class: 'GitSCM',
-                 branches: [[name: 'master']],
-                 userRemoteConfigs: [[
-                    url: 'https://github.com/zzkskys/simple-java-maven-app.git',
-                    credentialsId: 'github-personal-access-token',
-                 ]]
-                ])
-            }
-        }
+//      /* checkout repo */
+//         stage('Checkout SCM') {
+//             steps {
+//                 checkout([
+//                  $class: 'GitSCM',
+//                  branches: [[name: 'master']],
+//                  userRemoteConfigs: [[
+//                     url: 'https://github.com/zzkskys/simple-java-maven-app.git',
+//                     credentialsId: 'github-personal-access-token',
+//                  ]]
+//                 ])
+//             }
+//         }
 
         stage('Build'){
             agent{
