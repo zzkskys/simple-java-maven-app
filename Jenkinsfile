@@ -7,7 +7,7 @@ pipeline {
                 docker{
                     image 'maven:3-alpine'
 //                     args '-v /root/.m2:/root/.m2'
-                    args 'C:/Users/zzkskys/.m2:/root/.m2'
+                    args 'c:/Users/zzkskys/.m2:/root/.m2'
                 }
             }
             steps{
