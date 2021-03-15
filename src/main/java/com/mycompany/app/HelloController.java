@@ -17,7 +17,7 @@ public class HelloController {
 
     @GetMapping
     public String hello() {
-        return "您好 " + helloProperties.getName() + ", 欢迎您的访问 !";
+        return "您好 " + helloProperties.getName() + ", 欢迎您的访问,现在时间是 : " + LocalDateTime.now() + " !";
     }
 
 
